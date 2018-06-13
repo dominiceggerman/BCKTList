@@ -15,6 +15,7 @@
 	<link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 	<!-- Scripts -->
+	<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
 
 </head>
 
@@ -31,12 +32,32 @@
 
 	<main role="main">
 
-		<!-- Adding new todos -->
+		<!-- Adding new Todos -->
 		<div>
-
+			<h2> Add a thing to do: </h2>
+			<form method="Post" role="form">
+				<div>
+					<span class="input-group">
+						<button type="submit">ADD</button>
+					</span>
+				</div>
+			</form>
 		</div>
 
-		<!-- Display todos -->
+		<!-- Adding & Deleting Todos -->
+		<div class="bckt-grid">
+			<div class="grid-item">
+				<a><button><i class="fas fa-trash-alt"></i> Delete Completed </button></a>
+			</div>
+			<div class-"grid-item">
+					<a><button><i class="fas fa-trash-alt"></i> Delete All </button></a>
+			</div>
+		</div>
+
+		<!-- Display Todos -->
+		<ul>
+			
+		</ul>
 
 	</main>
 
