@@ -56,7 +56,9 @@
 
 		<!-- Display Todos -->
 		<ul>
-			
+			{% for item in bckt_list %}
+			<li class="list-item"> {{ item.text }} </li>
+			{% endfor %}
 		</ul>
 
 	</main>
