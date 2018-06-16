@@ -16,6 +16,11 @@ def index(request):
 @require_POST
 def addTodo(request):
 
+    # Get form from request
     form = TodoForm(request.POST)
-    # Return
+    # If form is valid, add to DB
+    if form.is_valid():
+        new_item = Todo(text=request.POST["text"])
+        new_item.save()
+    # Return: redirect to index
     return redirect("index")
