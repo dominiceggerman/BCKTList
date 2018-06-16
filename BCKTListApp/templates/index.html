@@ -35,16 +35,20 @@
 		<!-- Adding new Todos -->
 		<div>
 			<h2> Add a thing to do: </h2>
-			<form method="Post" role="form">
+			<form action="{% url 'add' %}" method="POST" role="form">
+				{% csrf_token %}
 				<div>
 					<span class="input-group">
-						<button type="submit">ADD</button>
+						<!-- Input text -->
+						{{ form.text }}
+						<!-- Submit button -->
+						<button type="submit" class="" id="add-btn">ADD</button>
 					</span>
 				</div>
 			</form>
 		</div>
 
-		<!-- Adding & Deleting Todos -->
+		<!-- Deleting Todos -->
 		<div class="bckt-grid">
 			<div class="grid-item">
 				<a><button><i class="fas fa-trash-alt"></i> Delete Completed </button></a>
