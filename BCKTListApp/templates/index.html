@@ -57,7 +57,11 @@
 		<!-- Display Todos -->
 		<ul>
 			{% for item in bckt_list %}
-			<li class="list-item"> {{ item.text }} </li>
+				{% if item.complete %}
+				<li class="list-item" style="text-decoration: line-through;"> {{ item.text }} </li>
+				{% else %}
+				<li class="list-item"> {{ item.text }} </li>
+				{% endif %}
 			{% endfor %}
 		</ul>
 
