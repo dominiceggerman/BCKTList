@@ -51,10 +51,10 @@
 		<!-- Deleting Todos -->
 		<div class="bckt-grid">
 			<div class="grid-item">
-				<a><button><i class="fas fa-trash-alt"></i> Delete Completed </button></a>
+				<a href="{% url 'deletecompletedtodo' %}"><button><i class="fas fa-trash-alt"></i> Delete Completed </button></a>
 			</div>
 			<div class-"grid-item">
-					<a><button><i class="fas fa-trash-alt"></i> Delete All </button></a>
+					<a href="{% url 'deleteall' %}"><button><i class="fas fa-trash-alt"></i> Delete All </button></a>
 			</div>
 		</div>
 
@@ -62,9 +62,9 @@
 		<ul>
 			{% for item in bckt_list %}
 				{% if item.complete %}
-				<li class="list-item" style="text-decoration: line-through;"> {{ item.text }} </li>
+					<li class="list-item" style="text-decoration: line-through;"> {{ item.text }} </li>
 				{% else %}
-				<li class="list-item"> {{ item.text }} </li>
+					<a href="{% url 'complete' item.id %}"><li class="list-item"> {{ item.text }} </li></a>
 				{% endif %}
 			{% endfor %}
 		</ul>
