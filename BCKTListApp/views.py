@@ -3,6 +3,7 @@ from django.views.decorators.http import require_POST
 from .models import Todo
 from .forms import TodoForm
 
+
 def index(request):
 
     # Get todo from DB, make form, assign to context
@@ -31,7 +32,6 @@ def completeTodo(request, todoID):
     todo = Todo.objects.get(pk=todoID)
     todo.complete = True
     todo.save()
-
     return redirect("index")
 
 
@@ -39,12 +39,10 @@ def deleteCompletedTodo(request):
 
     # Search for and delete objects that have been completed
     Todo.objects.filter(complete__exact=True).delete()
-
     return redirect("index")
 
 
 def deleteAll(request):
 
     Todo.objects.all().delete()
-
     return redirect("index")
